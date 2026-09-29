@@ -6,87 +6,109 @@ namespace Program
 {
     public class Jarmu
     {
-        private string Rendszam
-        {  // a jármű rendszáma
-            get { return _Rendszam}; set
+        private string rendszam;
+        public string Rendszam
+        {
+            get { return rendszam; }
+            set
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    _Rendszam = "ISMERETLEN";
+                    rendszam = "ISMERETLEN";
                 }
                 else
                 {
-                    _Rendszam = value;
+                    rendszam = value;
                 }
             }
         }
 
-        private int Kor
-        { // a jármű életkora évben
-            get { return _Kor; }
+        private int kor;
+        public int Kor
+        {
+            get { return kor; }
             set
             {
                 if (value < 0)
                 {
-                    _Kor = 0;
+                    kor = 0;
                 }
                 else if (value > 50)
                 {
-                    _Kor = 50;
+                    kor = 50;
                 }
                 else
                 {
-                    _Kor = value;
+                    kor = value;
                 }
             }
         }
-        private int KilometerOra
-        { // a jármű kilométeróra állása
-            get { return _KilometerOra; } 
+
+        private int kilometerOra;
+        public int KilometerOra
+        {
+            get { return kilometerOra; }
             set
             {
                 if (value < 0)
                 {
-                    _KilometerOra = 0;
+                    kilometerOra = 0;
                 }
                 else
                 {
-                    _KilometerOra = value;
+                    kilometerOra = value;
                 }
             }
         }
-        private int UzemanyagSzint
-        { // a jármű aktuális üzemanyag szintje
-            get { return _UzemanyagSzint; }
+
+        private int uzemanyagSzint;
+        public int UzemanyagSzint
+        {
+            get { return uzemanyagSzint; }
             set
             {
                 if (value < 0)
                 {
-                    _UzemanyagSzint = 0;
+                    uzemanyagSzint = 0;
                 }
                 else if (value > 100)
                 {
-                    _UzemanyagSzint = 100;
+                    uzemanyagSzint = 100;
                 }
                 else
                 {
-                    _UzemanyagSzint = value;
+                    uzemanyagSzint = value;
                 }
             }
         }
-        private bool SzervizSzukseges
-        { // ha jármű kilométeróra állása eléri vagy meghaladja a 200 000 km-t
-            get { return _SzervizSzukseges; }
-            set
+
+        public bool SzervizSzukseges
+        {
+            get { return KilometerOra >= 200000; }
+        }
+
+        public Jarmu(string rendszam, int kor, int kilometerOra, int uzemanyagSzint)
+        {
+            Rendszam = rendszam;
+            Kor = kor;
+            KilometerOra = kilometerOra;
+            UzemanyagSzint = uzemanyagSzint;
+        }
+
+        public string InformaciotAd()
+        {
+            return $"{this.Rendszam} - {this.Kor} éves jármű, {this.KilometerOra} km-rel";
+        }
+
+        public void Szervizel(int szervizDij)
+        {
+            if (szervizDij > 100000)
             {
-                if (KilometerOra >= 200000)
-                {
-                    _SzervizSzukseges = true;
-                }
-                else
-                {
-                    _SzervizSzukseges = false;
-                }
+                KilometerOra -= 10000;
             }
+            UzemanyagSzint -= 10;
+            //kiírja, hogy a jármű szervizelése megtörtént??????
         }
+
     }
+}
