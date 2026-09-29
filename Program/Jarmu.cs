@@ -100,7 +100,7 @@ namespace Program
             return $"{this.Rendszam} - {this.Kor} éves jármű, {this.KilometerOra} km-rel";
         }
 
-        public void Szervizel(int szervizDij)
+        public virtual void Szervizel(int szervizDij)
         {
             if (szervizDij > 100000)
             {
