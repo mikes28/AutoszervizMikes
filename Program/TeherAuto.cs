@@ -60,7 +60,7 @@ hívja meg az ősosztály metódusát*/
             return $"{this.Rendszam} - {this.Kor} éves jármű, {this.KilometerOra} km-rel, rakomány: {this.Rakomany}";
         }
 
-        public void Szervizel(int szervizDij)
+        public override void Szervizel(int szervizDij)
         {
             if (rakomany==0)
             {
