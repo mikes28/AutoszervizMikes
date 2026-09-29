@@ -107,7 +107,8 @@ namespace Program
                 KilometerOra -= 10000;
             }
             UzemanyagSzint -= 10;
-            //kiírja, hogy a jármű szervizelése megtörtént??????
+            Console.WriteLine("A jármű szervizelése megtörtént.");
+
         }
 
     }
