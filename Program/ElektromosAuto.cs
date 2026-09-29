@@ -36,7 +36,7 @@ namespace Program
         {
             return $"{this.Rendszam} - {this.Kor} éves elektromos autó, {this.KilometerOra} km-rel, {this.AkkumulatorSzint} % töltöttséggel.";
         }
-        public void Szervizel(int dij)
+        public override void Szervizel(int dij)
         {
             if (dij > 100000)
             {
