@@ -199,5 +199,16 @@ namespace Tesztek
             Assert.That(auto.KilometerOra, Is.EqualTo(190000));
             Assert.That(auto.AkkumulatorSzint, Is.EqualTo(70));
         }
+
+
+        //VERSENYAUTO TEST
+
+        [Test]
+        public void VersenyAuto_Rajtszam_Megadhato()
+        {
+            VersenyAuto auto = new VersenyAuto("TR-123", 8, 150000, 60, 15);
+
+            Assert.That(auto.Rajtszam, Is.EqualTo(15));
+        }
     }
 }
