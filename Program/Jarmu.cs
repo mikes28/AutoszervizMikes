@@ -95,7 +95,7 @@ namespace Program
             UzemanyagSzint = uzemanyagSzint;
         }
 
-        public string InformaciotAd()
+        public virtual string InformaciotAd()
         {
             return $"{this.Rendszam} - {this.Kor} éves jármű, {this.KilometerOra} km-rel";
         }

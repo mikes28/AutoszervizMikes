@@ -55,7 +55,7 @@ hívja meg az ősosztály metódusát*/
 
 
 
-        public string InformaciotAd()
+        public override string InformaciotAd()
         {
             return $"{this.Rendszam} - {this.Kor} éves jármű, {this.KilometerOra} km-rel, rakomány: {this.Rakomany}";
         }

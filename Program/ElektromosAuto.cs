@@ -32,7 +32,7 @@ namespace Program
         {
             AkkumulatorSzint = akkumulatorSzint;
         }
-        public string InformaciotAd()
+        public override string InformaciotAd()
         {
             return $"{this.Rendszam} - {this.Kor} éves elektromos autó, {this.KilometerOra} km-rel, {this.AkkumulatorSzint} % töltöttséggel.";
         }
